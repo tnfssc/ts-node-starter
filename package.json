@@ -1,0 +1,35 @@
+{
+  "name": "ts-node-starter",
+  "private": true,
+  "version": "0.0.1",
+  "module": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint --ext .js,.ts .",
+    "check": "tsc --noEmit",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "prepare": "husky install"
+  },
+  "author": "tnfssc",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vitest/coverage-c8": "^0.25.3",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.4",
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3",
+    "vitest": "^0.25.3"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --cache --fix",
+    "*.+(js|ts|json)": "prettier --write"
+  }
+}
